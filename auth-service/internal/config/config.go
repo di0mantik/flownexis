@@ -23,7 +23,7 @@ type GRPCConfig struct {
 func MustLoad() *Config {
 	path := fetchConfigPath()
 
-	if path == "" { panic("Config file path is empty") }
+	if path == "" { panic("Path to config file is empty") }
 	if _, err := os.Stat(path); os.IsNotExist(err) { panic("Config file doesn`t exist: " + path) }
 
 	var cfg Config
